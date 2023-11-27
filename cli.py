@@ -1,7 +1,6 @@
 from modules.func import *
 from datetime import datetime as dt
 import time
-from filedialogs import open_file_dialog, save_file_dialog
 
 if __name__ == '__main__':
     file = 'todo.txt'
