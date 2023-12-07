@@ -37,12 +37,37 @@ def editItem(item):
         todo[item] = edit_item
         addToFile()
 
+def editItem2(item_orig, item_new):
+    if item_orig in todo:
+        idx = 0
+        # for i, x in enumerate(todo):
+        #     if x == item_orig:
+        #         idx = i
+        #         break
+        # todo[i] = item_new
+
+        idx = todo.index(item_orig)
+        todo[idx] = item_new
+        addToFile()
+
+    else:
+        print(f'Invalid Original Item: {item_orig}, No Changes')
+
 def removeItem(item):
     if item >= len(todo) or item < 0:
         print(f'Invalid selection: {item+1}')
     else:
         todo.pop(item)
         addToFile()
+
+def removeItem2(item):
+    if item in todo:
+        idx = 0
+        idx = todo.index(item)
+        todo.pop(idx)
+        addToFile()
+    else:
+        print(f'Invalid Item: {item}, No Changes')
 
 def addToFile(file='todo.txt'):
     with open(f'.\\App1-ToDoList\\{file}', 'w') as f:

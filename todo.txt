@@ -1,6 +1,8 @@
 Return Amazon Shirts
 Buy New Clothes
 Take Out Recyclables
-Buy Auntie Shirts
 Buy Grandparents Shirts
 Clean Computer
+Wash Clothes
+Work from Home
+Master Python
