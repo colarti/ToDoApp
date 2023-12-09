@@ -22,8 +22,13 @@ objective: aopend to the global variable todo:list, the new input data
 returns: none
 """
 def addItem2(data:str):
-    todo.append(data.title())
-    addToFile()
+    if data != '':
+        todo.append(data.title())
+        addToFile()
+        return True
+    else:
+        print(f'Empty String, No Action')
+        return False
 
 def printItems():
     for i, x in enumerate(todo):
@@ -66,8 +71,10 @@ def removeItem2(item:str):
         idx = todo.index(item)
         todo.pop(idx)
         addToFile()
+        return True
     else:
-        print(f'Invalid Item: {item}, No Changes')
+        print(f'Cant complete Empty strings, select an item first')
+        return False
 
 def addToFile(file='todo.txt'):
     with open(f'.\\App1-ToDoList\\{file}', 'w') as f:
