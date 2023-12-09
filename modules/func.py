@@ -21,7 +21,7 @@ global: todo:list
 objective: aopend to the global variable todo:list, the new input data
 returns: none
 """
-def addItem2(data):
+def addItem2(data:str):
     todo.append(data.title())
     addToFile()
 
@@ -29,7 +29,7 @@ def printItems():
     for i, x in enumerate(todo):
         print(f'{i+1}. {x}')
 
-def editItem(item):
+def editItem(item:int):
     if item >= len(todo) or item <= 0:
         print(f'Invalid Selection: {item+1}')
     else:
@@ -37,7 +37,7 @@ def editItem(item):
         todo[item] = edit_item
         addToFile()
 
-def editItem2(item_orig, item_new):
+def editItem2(item_orig:str, item_new:str):
     if item_orig in todo:
         idx = 0
         # for i, x in enumerate(todo):
@@ -47,20 +47,20 @@ def editItem2(item_orig, item_new):
         # todo[i] = item_new
 
         idx = todo.index(item_orig)
-        todo[idx] = item_new
+        todo[idx] = item_new.title()
         addToFile()
 
     else:
         print(f'Invalid Original Item: {item_orig}, No Changes')
 
-def removeItem(item):
+def removeItem(item:int):
     if item >= len(todo) or item < 0:
         print(f'Invalid selection: {item+1}')
     else:
         todo.pop(item)
         addToFile()
 
-def removeItem2(item):
+def removeItem2(item:str):
     if item in todo:
         idx = 0
         idx = todo.index(item)

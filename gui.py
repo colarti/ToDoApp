@@ -55,7 +55,7 @@ if __name__ == '__main__':
             case 'Print':
                 printItems()
             case gui.WIN_CLOSED:    #this is the closed button (top-right)
-                break
+                exit()
             case _:
                 print(f'Invalid Command: {event}')
     
