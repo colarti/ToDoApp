@@ -15,12 +15,12 @@ if __name__ == '__main__':
     in_box = gui.InputText(tooltip='Enter a to-do', key='todo')
     list_box = gui.Listbox(values=todo, key='todos', enable_events=True, 
                            size=[45,10])  #45 is X, num of chars, 10 is Y, num of rows
-    btnAdd = gui.Button(key='Add', size=2, mouseover_colors='LightBlue2', 
-                        tooltip='Add a todo', image_source='.\\App1-ToDoList\\images\\add.png')  #the size=5 implies 5 chars wide with height of 1
+    btnAdd = gui.Button('Add', key='Add', size=2, mouseover_colors='LightBlue2', 
+                        tooltip='Add a todo') #, image_source='.\\App1-ToDoList\\images\\add.png')  #the size=5 implies 5 chars wide with height of 1
     btnExit = gui.Button('Exit')
     btnEdit = gui.Button('Edit')
     btnPrint = gui.Button('Print')
-    btnComplete = gui.Button(key='Complete', image_source='.\\App1-ToDoList\\images\\complete.png')
+    btnComplete = gui.Button('Complete', key='Complete') #, image_source='.\\App1-ToDoList\\images\\complete.png')
 
 
     win = gui.Window(f'ToDo App', 

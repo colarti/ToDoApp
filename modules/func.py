@@ -1,3 +1,5 @@
+import os
+
 """global variable todo:list"""
 todo = list() 
 
@@ -77,13 +79,21 @@ def removeItem2(item:str):
         return False
 
 def addToFile(file='todo.txt'):
-    with open(f'.\\App1-ToDoList\\{file}', 'w') as f:
+    # with open(f'.\\App1-ToDoList\\{file}', 'w') as f:
+    with open(f'{file}', 'w') as f:
         for x in todo:
             f.write(f'{x}\n')
     f.close()
 
 def loadfromFile(file='todo.txt'):
-    with open(f'.\\App1-ToDoList\\{file}', 'r') as f:
+    if not os.path.exists(file):
+        with open(file, 'w') as f:
+            pass
+
+
+
+    #with open(f'.\\App1-ToDoList\\{file}', 'r') as f:
+    with open(f'{file}', 'r') as f:
         for line in f.readlines():
             todo.append(line.strip())
     f.close()
