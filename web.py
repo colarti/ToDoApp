@@ -13,8 +13,8 @@ def add_todo():
 
 if __name__ == '__main__':
     st.set_page_config(layout='wide')   #change fonts as browser shrinks/expands
-    st.title('My Todo App')
-    st.subheader('This is my todo app.')
+    st.title('List of Reminders')
+    st.subheader('This is my reminder app.')
     st.write('This app is to increase <b>productivity</b>', unsafe_allow_html=True) #allows html tags
 
     func.loadfromFile()
