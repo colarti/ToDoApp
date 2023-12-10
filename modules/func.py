@@ -47,13 +47,13 @@ def editItem(item:int):
 def editItem2(item_orig:str, item_new:str):
     if item_orig in todo:
         idx = 0
-        # for i, x in enumerate(todo):
+        # for i, x in enumerate(todo):      #option 1
         #     if x == item_orig:
         #         idx = i
         #         break
         # todo[i] = item_new
 
-        idx = todo.index(item_orig)
+        idx = todo.index(item_orig)         #option 2
         todo[idx] = item_new.title()
         addToFile()
 
@@ -86,11 +86,10 @@ def addToFile(file='todo.txt'):
     f.close()
 
 def loadfromFile(file='todo.txt'):
+    todo.clear()
     if not os.path.exists(file):
         with open(file, 'w') as f:
             pass
-
-
 
     #with open(f'.\\App1-ToDoList\\{file}', 'r') as f:
     with open(f'{file}', 'r') as f:
